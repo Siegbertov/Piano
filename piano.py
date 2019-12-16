@@ -4,10 +4,15 @@ import pygame
 import datetime
 
 def show_time():
-    pass
+    cur = time.strftime("%H:%M:%S")
+    txt2["text"] = cur
+    root.after(100, show_time)
 
 def value(value):
-    pass
+    str1.set(value)
+    file = "Notes\\" + value + ".wav"
+    sound = pygame.mixer.Sound(file)
+    sound.play()
 
 pygame.init()
 root = Tk()
